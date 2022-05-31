@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1653685986 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\filacontrol.c
+	"filacontrol.h"
+
+1653686076 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.c
+	"listacontrol.h"
+
+1653685501 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.c
+	"menu.h"
+
+1653056131 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1654026087 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"compcontrol.h"
+
+1654026349 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.h
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1654026002 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.c
+	"compcontrol.h"
+
+1653686066 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\filacontrol.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1653686044 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.h
+	<stdio.h>
+	<stdlib.h>
+
