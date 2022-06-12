@@ -4,4 +4,9 @@
 #include <stdlib.h>
 
 
-#endif // MENU_H_INCLUDED
+void menu_comp();
+void menu_cadastro_impressora();
+void menu_cadastro_impressora2();
+void contador_de_cadastros(int n1, int n2);
+
+#endif

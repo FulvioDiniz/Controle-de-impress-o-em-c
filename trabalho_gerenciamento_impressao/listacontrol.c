@@ -1,200 +1,182 @@
 #include "listacontrol.h"
 
 
-/*Listad* cria_listad()
-{
-    Listad* novalista;
-    novalista = (Listad *)malloc(sizeof(Listad));
-    novalista->ini = novalista->fim = NULL;
-    return novalista;
-}
 
-Nod* cria_nod(int valor)
+No* cria_no(Infolista ord_lista)
 {
-    Nod* novo = (Nod*)malloc(sizeof(Nod));
-    novo->ant = novo->prox = NULL;
-    novo->info = valor;
+    No* novo;
+    novo = (No*) malloc(sizeof(No));
+    novo->prox = NULL;
+    novo->ord_lista = ord_lista;
+
     return novo;
 }
 
 
-Listad* insere_inicio_listad(Listad *L, int valor)
+No* insere_inicio(No *L, Infolista ord_lista)
 {
-    Nod *novo= cria_nod(valor);
-
-    if (L == NULL)
+    No* nuevo = cria_no(ord_lista);
+    if (L != NULL)
     {
-        L = cria_listad();
-        L->ini = L->fim = novo;
-
+        nuevo->prox = L;
     }
-    else
-    {
-        if (L->ini == NULL)
-            L->ini = L->fim = novo;
-        else
-        {
-            novo->prox = L->ini;
-            L->ini->ant = novo;
-            L->ini = novo;
-        }
-    }
-    return L;
-
+    return nuevo;
 }
 
 
-
-void mostra_listad(Listad* L)
+void mostra_lista(No* L)
 {
-    Nod* aux = L->ini;
-
-    while(aux != NULL)
-    {
-        printf("%d ", aux->info);
-        aux = aux->prox;
-    }
-    printf("\n ");
-}
-
-Listad* insere_fim_listad(Listad* L, int valor)
-{
-    Nod *novo = cria_nod(valor);
-
-    if (L == NULL)
-    {
-        L = cria_listad();
-        L->ini = L->fim = novo;
-    }
-    else
-    {
-
-
-        if(L->ini == NULL)
-        {
-            L->ini = L->fim = novo;
-        }
-        else
-        {
-            novo->ant = L->fim;
-            L->fim->prox = novo;
-            L->fim = novo;
-        }
-    }
-    return L;
-}
-
-Nod* localiza_elemento(Listad *L, int valor)
-{
-
-    Nod* aux = L->ini;
-
-    while(aux!=NULL && aux->info != valor)
-        aux = aux->prox;
-
-    return aux;
-}
-
-
-void insere_apos_elemento(Listad* L, int valor, int elemento)
-{
-    Nod* novo =cria_nod(valor);
-
-    Nod *aux2, *aux = localiza_elemento(L, elemento);
-
-    if (aux != NULL)
-    {
-        aux2 = aux->prox;
-        novo->prox = aux2;
-        aux2->ant = novo;
-        novo->ant = aux;
-        aux->prox = novo;
-        if (aux == L->fim)
-            L->fim = novo;
-    }
-    else
-        printf("elemento nao encontrado");
-}
-
-int remove_inicio_listad(Listad *L)
-{
-    Nod* aux;
-    int resposta = -1;//quando nao tem nada pra remover
-    if (L!=NULL)
-        if (L->ini != NULL)
-        {
-            aux = L->ini;
-
-            if (L->ini != L->fim)
-            {
-                L->ini->prox->ant = NULL;
-                L->ini = L->ini->prox;
-            }
-            else
-                L->ini = L->fim = NULL;
-
-            resposta = aux->info;
-            free(aux);
-        }
-    return resposta;
-}
-
-int remove_fim_listad(Listad *L)
-{
-    Nod* aux;
-    int resposta = -1;
-
-    if(L != NULL && L->fim != NULL)
-    {
-        aux = L->fim;
-        if(L->ini != L->fim)//mais de um elemento na lista
-        {
-            L->fim->ant->prox = NULL;
-            L->fim = L->fim->ant;
-        }
-        else//só tem um elemento na lista
-            L->ini = L->fim = NULL;
-
-        resposta = aux->info;
-        free(aux);
-    }
-    return resposta;
-}
-
-int remove_elemento_listad(Listad *L, int valor)
-{
-    Nod *aux = localiza_elemento(L,valor);
-    int resposta = -1;
-
-    if (aux != NULL)
-    {
-        if (aux == L->ini)
-            resposta = remove_inicio_listad(L);
-        else if(aux == L->fim)
-            resposta = remove_fim_listad(L);
-        else
-        {
-            aux->ant->prox = aux->prox;
-            aux->prox->ant = aux->ant;
-            resposta = aux->info;
-            free(aux);
-        }
-    }
-    return resposta;
-}
-
-Listad* libera_listad(Listad *L)
-{
-    Nod *aux = L->ini;
+    No* aux = L;
 
     while (aux != NULL)
     {
-        L->ini = L->ini->prox;
+        printf("\n");
+         printf("Modelo = [%s]\n ",aux->ord_lista.modelo);
+        printf("identificador = [%d]\n ",aux->ord_lista.identificador );
+        printf("tempo maximo de prioridade = [%d]\n ",aux->ord_lista.tempo_max_priori );
+        printf("tempo maximo folha  = [%d]\n ",aux->ord_lista.tempo_max_folha );
+        printf("Numero na fila = [%d]\n ",aux->ord_lista.qtd_fila );
+        printf("Tecnologia nivel = [%d]\n",aux->ord_lista.tecnologia );
+        printf("\n");
+
+        aux = aux->prox;// (*aux).prox
+    }
+    printf("\n");
+}
+
+
+
+void libera_lista(No *L)
+{
+    No *aux = L;
+
+    while (aux != NULL)
+    {
+        L = L->prox;
         free(aux);
         aux = L;
     }
 
-    free(L);
-    return NULL;
+}
+
+No* insere_fim(No* L, Infolista ord_lista)
+{
+    No* novo = cria_no(ord_lista);
+    No* aux = L;
+
+    if (L == NULL)
+    {
+        L = novo;
+    }
+    else
+    {
+        //  for (aux = L; aux->prox != NULL; aux = aux->prox)
+
+        while (aux->prox != NULL)
+        {
+            aux = aux->prox;
+        }
+        aux->prox = novo;
+    }
+    return L;
+}
+
+//insere após o elemento
+
+No* insere_meio(No* L, Infolista ord_fila, Infolista ord_lista)
+{
+
+    No* aux = L;
+    No* novo = cria_no(ord_lista);
+
+    if (L == NULL)
+    {
+        L = novo;
+    }
+    else
+    {
+        while (aux->ord_lista.tecnologia != ord_fila.tecnologia)
+        {
+            aux = aux->prox;
+        }
+        novo->prox = aux->prox;
+        aux->prox = novo;
+    }
+    return L;
+}
+
+No* insere_ordenado(No* L, Infolista ord_lista){
+
+    No* aux = L;
+    if (L == NULL){
+        L = cria_no(ord_lista);
+    }
+    else{
+        if(L->ord_lista.tecnologia > ord_lista.tecnologia){
+            L = insere_inicio(L,ord_lista);
+        }
+        else{
+            while (aux->prox != NULL && ord_lista.tecnologia > aux->prox->ord_lista.tecnologia){
+                aux = aux->prox;
+            }
+            if(aux->prox == NULL){
+                L = insere_fim(L,ord_lista);
+            }
+            else{
+                L = insere_meio(L, aux->ord_lista, ord_lista);
+            }
+
+        }
+    }
+    return L;
+}
+
+/*No* remove_elemento(No* L, Infolista ord_lista)
+{
+
+    No* aux = L;
+    No* anterior = NULL;
+    if (L != NULL)
+    {
+        while (aux->info != elemento)
+        {
+            anterior = aux;
+            aux = aux->prox;
+        }
+        if (anterior == NULL)//remove o primeiro elemento
+        {
+            L = aux->prox;
+        }
+        else
+        {
+            anterior->prox = aux->prox;
+        }
+        free(aux);
+    }
+    return L;//se nao removeu o primeiro elemento, retorna o mesmmo L
+}*/
+
+/*void reverte_lista(No* L)
+{
+    No* ini,*fim;
+    ini = fim = L;
+    int aux;
+    No* fim_ultima_iteracao = NULL;
+    fim = ini->prox;
+
+
+    while (ini != fim_ultima_iteracao && ini->prox != fim_ultima_iteracao)
+    {
+        while (fim->prox != fim_ultima_iteracao)
+            fim = fim->prox;
+
+        aux=ini->info;
+        ini->info = fim->info;
+        fim->info = aux;
+
+        fim_ultima_iteracao = fim;
+        ini = ini->prox;
+        fim = ini->prox;
+    }
 
 }*/

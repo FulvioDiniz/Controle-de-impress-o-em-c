@@ -2,37 +2,42 @@
 1653685986 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\filacontrol.c
 	"filacontrol.h"
 
-1653686076 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.c
+1655074378 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.c
 	"listacontrol.h"
 
-1653685501 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.c
+1655073793 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.c
 	"menu.h"
 
-1653056131 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.h
+1655071952 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.h
 	<stdio.h>
 	<stdlib.h>
 
-1654026087 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\main.c
+1655074051 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"menu.h"
 	"compcontrol.h"
+	"listacontrol.h"
 
-1654026349 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.h
+1655070803 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.h
 	<conio.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"listacontrol.h"
 
-1654026002 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.c
+1655070811 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.c
 	"compcontrol.h"
+	"listacontrol.h"
 
 1653686066 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\filacontrol.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 
-1653686044 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.h
+1655072683 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
