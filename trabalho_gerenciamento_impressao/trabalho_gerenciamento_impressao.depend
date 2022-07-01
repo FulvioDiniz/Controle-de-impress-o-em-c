@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1656032345 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\filacontrol.c
+	"filacontrol.h"
+	"listacontrol.h"
+
+1656036884 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.c
+	"listacontrol.h"
+	"filacontrol.h"
+
+1656015669 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.c
+	"menu.h"
+	"listacontrol.h"
+
+1656012552 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1656036347 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<time.h>
+	<Windows.h>
+	"menu.h"
+	"compcontrol.h"
+	"listacontrol.h"
+	"filacontrol.h"
+
+1655137385 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.h
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listacontrol.h"
+
+1656032815 source:c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\compcontrol.c
+	"compcontrol.h"
+	"listacontrol.h"
+
+1656005442 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\filacontrol.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1656035220 c:\users\fulvi\onedrive\햞ea de trabalho\trabalhoed_v1\trabalho_gerenciamento_impressao\listacontrol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"filacontrol.h"
+
